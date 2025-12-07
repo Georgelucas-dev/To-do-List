@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>To-do List</title>
+</head>
+<body>
+    <div id="notification-container"></div>
+    
+    <div class="container">
+        <div id="header">
+            <p id="changeName">Nome da tarefa</p>
+            <button id="set-task-name" onclick="setTaskName();">
+                <img src="../assets/edit.png" alt="Edit">
+            </button>
+            <input type="text" id="task-name-input" placeholder="Nome da tarefa">
+            <button id="set-name" onclick="setName();">Set</button>
+        </div>
+        
+        <main class="content">
+            <div class="add-items">    
+                <button id="add-item" onclick="addItem();">Add Item</button>
+                <button id="add" onclick="add();">Add</button>
+                <input type="text" id="add-item-input" placeholder="Enter item" required>
+            </div>
+            
+            <div id="tasks" class="tasks">
+                <!--Items will appear here-->
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
