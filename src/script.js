@@ -125,7 +125,7 @@ function renderTasks() {
     const completeBnt = document.createElement("div");
     completeBnt.id = "complete";
     const completeImg = document.createElement("img");
-    completeImg.src = "../assets/correct.png";
+    completeImg.src = "assets/correct.png";
     completeImg.alt = "complete";
     completeImg.id = "complete-img";
 
@@ -145,7 +145,7 @@ function renderTasks() {
     const deleteBnt = document.createElement("button");
     deleteBnt.id = "delete";
     const deleteImg = document.createElement("img");
-    deleteImg.src = "../assets/trash-can.png";
+    deleteImg.src = "assets/trash-can.png";
     deleteImg.alt = "Delete";
     deleteImg.id = "delete-img";
     deleteBnt.appendChild(deleteImg);
