@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <title>To-do List</title>
 </head>
 <body>
@@ -14,26 +15,38 @@
     
     <div class="container">
         <div id="header">
-            <p id="changeName">Nome da tarefa</p>
+            <p id="changeName">Just do it!</p>
             <button id="set-task-name" onclick="setTaskName();">
                 <img src="../assets/edit.png" alt="Edit">
             </button>
-            <input type="text" id="task-name-input" placeholder="Nome da tarefa">
+            <input type="text" id="task-name-input" placeholder="Just do it!">
             <button id="set-name" onclick="setName();">Set</button>
         </div>
         
         <main class="content">
             <div class="add-items">    
-                <button id="add-item" onclick="addItem();">Add Item</button>
-                <button id="add" onclick="add();">Add</button>
+                <button id="add-item" onclick="addItem();">Do something</button>
+                <button id="add" onclick="add();">I got this!</button>
                 <input type="text" id="add-item-input" placeholder="Enter item" required>
             </div>
             
+            <div class="tasks-container">
+                
             <div id="tasks" class="tasks">
                 <!--Items will appear here-->
             </div>
+            </div>
         </main>
+        
     </div>
     <script src="script.js"></script>
+    <script>
+        const tasks = document.getElementById('tasks');
+        const sortable = new Sortable(tasks, {
+            animation: 150,
+            ghostClass: 'blue-background-class'
+        });
+    </script>
+    
 </body>
 </html>
