@@ -14,6 +14,18 @@
 <body>
     <div id="notification-container"></div>
     
+
+    <div class="pomodoro-container">
+        <div class="pomodoro">
+            <h2>Focus</h2>
+            <h1 id="timer">25:00</h1>
+            <div class="buttons">
+                <button id="start-pomodoro">Start</button>
+                <button id="reset-pomodoro" onclick="resetPomodoro();">Reset</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div id="header">
             <p id="changeName">Just do it!</p>
@@ -40,6 +52,7 @@
         </main>
         
     </div>
+
     <script src="./src/script.js"></script>
     <script>
         const tasks = document.getElementById('tasks');

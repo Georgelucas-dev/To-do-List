@@ -173,3 +173,24 @@ function notificacao(message, color) {
     notify.remove();
   }, 3000);
 }
+
+
+const startTimerBtn = document.getElementById("start-pomodoro");
+const timerDisplay = document.getElementById("timer");
+
+let time = 60;
+
+startTimerBtn.addEventListener('click', () => {
+  const timer = setInterval(() => {
+    let updatetime = timerDisplay.textContent = `${time.toString().padStart(2, "0")}:${time.toString().padStart(2, "0")}`;
+
+    if (time === 0){
+      clearInterval(timer);
+      notificacao("Game Over", "green");
+    }
+
+    time--;
+  }, 1000);
+
+  
+})
