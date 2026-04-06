@@ -63,11 +63,7 @@ function setName() {
   }
 }
 
-function addItem() {
-  hide(addItemBnt);
-  show(addBnt);
-  show(newItem);
-}
+
 
 function add() {
   const text = newItem.value.trim();
@@ -84,9 +80,7 @@ function add() {
 
   newItem.value = "";
 
-  hide(addBnt);
-  hide(newItem);
-  show(addItemBnt);
+
 }
 
 function addTask(nome) {
@@ -134,7 +128,7 @@ function renderTasks() {
     completeBnt.addEventListener("click", () => {
       task.classList.toggle("completed");
       if (task.classList.contains("completed")) {
-        notificacao("Tarefa concluída!", "green");
+        notificacao("Tarefa concluída!", "#65bd53");
       } else {
         notificacao("Tarefa desmarcada!");
       }
@@ -154,7 +148,7 @@ function renderTasks() {
       task.remove();
       items = items.filter((i) => i.nome !== item.nome);
       salvar(items);
-      notificacao("Tarefa removida com sucesso!", "green");
+      notificacao("Tarefa removida com sucesso!", "#65bd53");
     });
   });
 }
@@ -187,7 +181,7 @@ startTimerBtn.addEventListener("click", () => {
 
     if (time === 0) {
       clearInterval(timer);
-      notificacao("Game Over", "green");
+      notificacao("Game Over", "#65bd53");
     }
     resetTimer.addEventListener("click", () => {
       clearInterval(timer);
