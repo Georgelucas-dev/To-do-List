@@ -116,7 +116,7 @@ body {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 4rem;
   color: var(--background-color);
   padding: 20px;
@@ -188,7 +188,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: auto%;
-  padding: 20px;
+  padding:  0 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   gap: 10px;
