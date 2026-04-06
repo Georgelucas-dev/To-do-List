@@ -1,297 +1,320 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --primary-color: #000;
-    --secondary-color: #333;
-    --background-color: #fff;
-    --text-color: #fff;
-    --text-color-2: #000;
-    --delete-color: #c0c2b6;
+:root {
+  --primary-color: #000;
+  --secondary-color: #333;
+  --background-color: #fff;
+  --text-color: #fff;
+  --text-color-2: #000;
+  --delete-color: #c0c2b6;
 }
 
 body {
-    min-height: 100vh;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-color: var(--primary-color);
+  min-height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: var(--primary-color);
 }
 
-.pomodoro-container{
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.pomodoro-container {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-    padding: 10px;
+  padding: 10px;
 }
 
-.pomodoro{
-    color: var(--background-color);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
+.pomodoro {
+    position: absolute;
+  color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.pomodoro h2{
-    font-size: 4rem;
-    text-align: center;
-    font-weight: 900;
+.pomodoro h2 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
 }
 
-.pomodoro h1{
-    font-size: 8rem;
-    text-align: center;
+.pomodoro h1 {
+  font-size: 8rem;
+  text-align: center;
 }
 
-.pomodoro button{
-    height: 50px;
-    width: 150px;
-    font-size: 1.5rem;
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.pomodoro button {
+  height: 50px;
+  width: 150px;
+  font-size: 1.5rem;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.maximise {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.maximise img {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.maximise img:hover {
+  transform: scale(1.1);
 }
 
 .container {
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
 }
 
 #header {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 30px;
-    font-size: 4rem;
-    color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 4rem;
+  color: var(--background-color);
 }
 
-#set-task-name{
-    display: block;
-    height: 30px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+#set-task-name {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-#set-task-name:hover{
-    transform: scale(1.1);
+#set-task-name:hover {
+  transform: scale(1.1);
 }
 
-#set-task-name img{
-    height: 100%;
-    width: 100%;
+#set-task-name img {
+  height: 100%;
+  width: 100%;
 }
 
-#task-name-input{
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    display: none;
-    font-size: 4rem;
-    height: 5rem;
-    width: 20%;
-    color: white;
-    padding-left: 10px;
-    background-color: transparent;
-    border: none;
-    outline: none;
+#task-name-input {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  display: none;
+  font-size: 4rem;
+  height: 5rem;
+  width: 60%;
+  color: white;
+  padding-left: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
-#set-name{
-    display: none;
-    height: 30px;
-    width: 50px;
-    color: white;
-    background-color: #0f0f0f;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+#set-name {
+  display: none;
+  height: 30px;
+  width: 50px;
+  color: white;
+  background-color: #0f0f0f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 .content {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    gap: 10px;
-    background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  background-color: transparent;
 }
 
 .tasks-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
 }
 
 .add-items {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: row;
 }
 
 #add-item {
-    height: 3rem;
-    width: 30%;
-    font-size: 1.1rem;
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transform: background-color 0.3s ease;
+  height: 3rem;
+  width: 30%;
+  font-size: 1.1rem;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: background-color 0.3s ease;
 }
 
 #add-item:hover {
-    transition: background-color 0.3s ease;
-    background-color: #c7c7c7ff;
+  transition: background-color 0.3s ease;
+  background-color: #f3eeeeff;
 }
 
 #add {
-    display: none;
-    height: 3rem;
-    font-size: 1.1rem;
-    width: 30%;
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: none;
+  height: 3rem;
+  font-size: 1.1rem;
+  width: 30%;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #add:hover {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 #add-item-input {
-    display: none;
-    height: 3rem;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    width: 70%;
-    border: 1px solid #3e3b3a;
-    border-radius: 5px;
-    padding: 5px;
-    outline: none;
+  display: none;
+  height: 3rem;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  width: 70%;
+  border: 1px solid #3e3b3a;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
 }
 
 #tasks {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    border-radius: 5px;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 5px;
+  gap: 10px;
 }
 
-
 #task {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    color: var(--text-color);
-    font-size: 2rem;
-    background-color: #0f0f0f;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-color);
+  font-size: 2rem;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  gap: 20px;
 }
 
 #options {
-    display: flex;
-    gap: 10px;
-    width: auto;
-    background-color: transparent;
+  display: flex;
+  gap: 10px;
+  width: auto;
+  background-color: transparent;
 }
 
 #delete {
-    display: block;
-    height: 37px;
-    width: 37px;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+  display: block;
+  height: 37px;
+  width: 37px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-
 #delete-img {
-    display: block;
-    height: 37px;
-    width: 37px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  display: block;
+  height: 37px;
+  width: 37px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 #complete {
-    display: block;
-    height: 37px;
-    width: 37px;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+  display: block;
+  height: 37px;
+  width: 37px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
-
-#complete-img{
-    display: block;
-    height: 37px;
-    width: 37px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.completed { opacity: 0.5; text-decoration: line-through; }
-
 
 #complete-img {
-    display: block;
-    height: 37px;
-    width: 37px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  display: block;
+  height: 37px;
+  width: 37px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+#complete-img {
+  display: block;
+  height: 37px;
+  width: 37px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 #options {
-    display: flex;
-    gap: 10px;
-    background-color: white;
+  display: flex;
+  gap: 10px;
+  background-color: white;
 }
 
 #notification-container {
@@ -309,9 +332,11 @@ body {
   color: #000;
   padding: 12px 16px;
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  animation: slideIn 0.3s forwards, fadeOut 0.3s 2.7s forwards;
+  animation:
+    slideIn 0.3s forwards,
+    fadeOut 0.3s 2.7s forwards;
   font-family: Arial, sans-serif;
 }
 
@@ -333,88 +358,84 @@ body {
   }
 }
 
-
 @media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-    body{
-        flex-direction: column;
-        gap: 40px;
-    }
+  .pomodoro-container {
+    width: 100%;
+    height: auto;
+  }
 
-    .pomodoro-container{
-        width: 100%;
-        height: auto;
-        
-    }
+  .pomodoro h1 {
+    font-size: 2.5rem;
+  }
 
-    .pomodoro h1{
-        font-size: 2.5rem;
-    }
+  .pomodoro h2 {
+    font-size: 2.5rem;
+  }
 
-    .pomodoro h2{
-        font-size: 2.5rem;
-    }
+  .pomodoro button {
+    height: 40px;
+    width: 120px;
+    font-size: 1rem;
+  }
 
-    .pomodoro button{
-        height: 40px;
-        width: 120px;
-        font-size: 1rem;
-    }
+  .container {
+    width: 100%;
+    height: auto;
+  }
 
-    .container{
-        width: 100%;
-        height: auto;
-    }
+  .content {
+    width: 100%;
+    height: 400px;
+  }
 
-    .content {
-        width: 100%;
-        height: 400px;
-    }
+  #add-item {
+    font-size: 1rem;
+    width: 40%;
+  }
 
-    #add-item{
-        font-size: 1rem;
-        width: 40%;
-    }
+  #add-item:hover {
+    background-color: initial;
+  }
 
-    #add-item:hover {
-        background-color: initial;
-    }
+  #task-name-input {
+    width: 60%;
+    font-size: 2.5rem;
+  }
 
-    #task-name-input {
-        width: 60%;
-        font-size: 2.5rem;
-    }
+  #header {
+    font-size: 2.5rem;
+  }
 
-    #header {
-        font-size: 2.5rem;
-    }
-
-    #tasks {
-        font-size: 1.5rem;
-    }
+  #tasks {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .content {
-        height: 300px;
-    }
+  .content {
+    height: 300px;
+  }
 
-    #add-item{
-        font-size: 0.9rem;
-        width: 50%;
-    }
+  #add-item {
+    font-size: 0.9rem;
+    width: 50%;
+  }
 
+  #task-name-input {
+    width: 70%;
+    font-size: 2rem;
+  }
 
-    #task-name-input {
-        width: 70%;
-        font-size: 2rem;
-    }
+  #header {
+    font-size: 3rem;
+  }
 
-    #header {
-        font-size: 3rem;
-    }
-
-    #tasks {
-        font-size: 1.2rem;
-    }
+  #tasks {
+    font-size: 1.2rem;
+  }
 }

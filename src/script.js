@@ -4,7 +4,6 @@
 
 let items = [];
 
-
 function carregar() {
   const storedItems = localStorage.getItem("items");
   if (storedItems) {
@@ -156,7 +155,6 @@ function renderTasks() {
       items = items.filter((i) => i.nome !== item.nome);
       salvar(items);
       notificacao("Tarefa removida com sucesso!", "green");
-
     });
   });
 }
@@ -174,23 +172,39 @@ function notificacao(message, color) {
   }, 3000);
 }
 
-
 const startTimerBtn = document.getElementById("start-pomodoro");
 const timerDisplay = document.getElementById("timer");
+const resetTimer = document.getElementById("reset-pomodoro");
 
-let time = 60;
 
-startTimerBtn.addEventListener('click', () => {
+let time = 25 * 60;
+
+startTimerBtn.addEventListener("click", () => {
   const timer = setInterval(() => {
-    let updatetime = timerDisplay.textContent = `${time.toString().padStart(2, "0")}:${time.toString().padStart(2, "0")}`;
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    let updatetime = (timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`);
 
-    if (time === 0){
+    if (time === 0) {
       clearInterval(timer);
       notificacao("Game Over", "green");
     }
+    resetTimer.addEventListener("click", () => {
+      clearInterval(timer);
+      time = 25 * 60;
+    });
 
     time--;
   }, 1000);
+});
 
-  
+
+const maximise = document.getElementById('maximise');
+const pomodoro = document.getElementById('pomodoro-container');
+const todolist = document.getElementById('container');
+
+
+maximise.addEventListener('click', () => {
+  pomodoro.style.width = '100%';
+  todolist.style.display = 'none';
 })

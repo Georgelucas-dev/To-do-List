@@ -1,0 +1,10 @@
+{
+    "css.validate": true,
+    "css.lint.enabled": true,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false,
+        "editor.suggest.enabled": true
+    },
+    "editor.suggest.triggerCharacters": ["-", ":", " "]
+}
