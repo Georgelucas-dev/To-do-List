@@ -3,72 +3,222 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <link rel="shortcut icon" href="./assets/task.png" type="image/x-icon" />
-    <title>To-do List</title>
+    <link rel="stylesheet" href="./src/css/homescreen.css">
+    <title>George Lucas Workspace</title>
   </head>
   <body>
-    <div id="notification-container"></div>
-
-    <!-- <div id="pomodoro-container" class="pomodoro-container">
-        <div class="pomodoro">
-            <h2>Focus</h2>
-            <h1 id="timer">25:00</h1>
-            <div class="buttons">
-                <button id="start-pomodoro">Start</button>
-                <button id="reset-pomodoro" onclick="resetPomodoro();">Reset</button>
-            </div>
-
-            <div id="maximise" class="maximise"><img src="./assets/scale-up.png" alt="Maximise"></div>
-        </div>
-    </div> -->
-
-    <div id="container" class="container">
-      <div id="header">
-        <p class="smText">― Today's tasks</p>
-        <div class="title">
-          <p id="changeName">Just do it!</p>
-          <button id="set-task-name" onclick="setTaskName()">
-            <img src="./assets/edit.png" alt="Edit" />
-          </button>
-          <input type="text" id="task-name-input" placeholder="Just do it!" />
-          <button id="set-name" onclick="setName()">Set</button>
-        </div>
-      </div>
-
-      <main class="content">
-        <div class="add-items">
-            <input
-            type="text"
-            id="add-item-input"
-            placeholder="Adicione uma nova tarefa..."
-            required
-            />
-            <button id="add" onclick="add()">I got this!</button>
-        </div>
-
-        <div class="tasks-container">
-          <div id="tasks" class="tasks">
-            <!--Items will appear here-->
+    <div class="container">
+      <div class="hub">
+        <div class="top">
+          <div>
+            <div class="greeting-tag">— workspace</div>
+            <div class="greeting-name">Hey, George.</div>
+            <div class="greeting-sub" id="greeting-msg">Loading...</div>
+          </div>
+          <div class="time-block">
+            <div class="clock" id="clock">--:--</div>
+            <div class="date-str" id="datestr">---</div>
           </div>
         </div>
-      </main>
+
+        <div class="wrapper">
+
+
+
+        <div class="grid">
+          <div class="card accent wide" onclick="openApp('tasks')">
+            <div class="card-arrow">↗</div>
+            <div class="card-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <polyline points="9 11 12 14 22 4" />
+                <path
+                  d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                />
+              </svg>
+            </div>
+            <div class="card-label">produtividade</div>
+            <div class="card-title">Lista de tarefas</div>
+            <div class="card-desc">
+              Organize seu dia. Adicione, complete e acompanhe.
+            </div>
+            <div class="todo-preview">
+              <div class="todo-item">
+                <div class="todo-dot"></div>
+                Codar every day for 2 hours
+              </div>
+              <div class="todo-item">
+                <div class="todo-dot"></div>
+                Read in english every day
+              </div>
+              <div class="todo-item todo-done">
+                <div class="todo-dot" style="background: #2a2a2a"></div>
+                Review JavaScript notes
+              </div>
+            </div>
+            <span class="todo-count">2 pendentes · 1 concluída</span>
+          </div>
+
+          <div class="card" onclick="openApp('pomodoro')">
+            <div class="card-arrow">↗</div>
+            <div class="card-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="card-label">foco</div>
+            <div class="card-title">Pomodoro</div>
+            <div class="card-desc">Sessões de 25 min.</div>
+            <div class="pomodoro-preview">
+              <svg class="pomo-ring" viewBox="0 0 44 44">
+                <circle
+                  cx="22"
+                  cy="22"
+                  r="18"
+                  fill="none"
+                  stroke="#1a1a1a"
+                  stroke-width="3"
+                />
+                <circle
+                  cx="22"
+                  cy="22"
+                  r="18"
+                  fill="none"
+                  stroke="#4ade80"
+                  stroke-width="3"
+                  stroke-dasharray="113 113"
+                  stroke-dashoffset="28"
+                  stroke-linecap="round"
+                  transform="rotate(-90 22 22)"
+                />
+                <text
+                  x="22"
+                  y="27"
+                  text-anchor="middle"
+                  font-size="10"
+                  fill="#fff"
+                  font-family="monospace"
+                  font-weight="700"
+                >
+                  75%
+                </text>
+              </svg>
+              <div class="pomo-info">
+                <strong>Pronto pra começar</strong>Sessão 1 de 4
+              </div>
+            </div>
+          </div>
+
+          <div class="card" onclick="openApp('portfolio')">
+            <div class="card-arrow">↗</div>
+            <div class="card-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <div class="card-label">portfólio</div>
+            <div class="card-title">Meu portfólio</div>
+            <div class="card-desc">Ver e editar projetos.</div>
+            <div class="portfolio-bar">
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">React Native</span>
+              <span class="stack-tag">JS</span>
+              <span class="stack-tag">CSS</span>
+            </div>
+          </div>
+
+          <div class="card add-card" onclick="addApp()">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#2a2a2a"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <div class="add-label">adicionar app</div>
+          </div>
+        </div>
+
+        <div class="status-bar">
+          <div class="stat">
+            <div class="stat-val" id="s-tasks">2</div>
+            <div class="stat-key">tarefas hoje</div>
+          </div>
+          <div class="sep"></div>
+          <div class="stat">
+            <div class="stat-val">0</div>
+            <div class="stat-key">pomodoros</div>
+          </div>
+          <div class="sep"></div>
+          <div class="stat">
+            <div class="stat-val">3</div>
+            <div class="stat-key">projetos</div>
+          </div>
+          <div class="sep"></div>
+          <div class="stat">
+            <div class="stat-val" id="s-streak">1</div>
+            <div class="stat-key">dias seguidos</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="./src/script.js"></script>
+  </div>
+
     <script>
-      const tasks = document.getElementById("tasks");
-      const sortable = new Sortable(tasks, {
-        animation: 150,
-        ghostClass: "blue-background-class",
-      });
+      function tick() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, "0");
+        const m = String(now.getMinutes()).padStart(2, "0");
+        document.getElementById("clock").textContent = h + ":" + m;
+        const days = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+        const months = [
+          "Jan",
+          "Fev",
+          "Mar",
+          "Abr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Ago",
+          "Set",
+          "Out",
+          "Nov",
+          "Dez",
+        ];
+        document.getElementById("datestr").textContent =
+          days[now.getDay()] +
+          ", " +
+          now.getDate() +
+          " " +
+          months[now.getMonth()];
+        const h2 = now.getHours();
+        const msg =
+          h2 < 12
+            ? "Bom dia. Vamos codar?"
+            : h2 < 18
+              ? "Boa tarde. Foco total."
+              : "Boa noite. Mais um dia de progresso.";
+        document.getElementById("greeting-msg").textContent = msg;
+      }
+      tick();
+      setInterval(tick, 10000);
+
+      function openApp(app) {
+        const labels = {
+          tasks: "./src/todoList.html",
+          pomodoro: "./src/pomodoro.html",
+          portfolio: "https://georgelucas-dev.github.io/Portfolio/",
+        };
+        window.open(labels[app], "_self");
+      }
     </script>
   </body>
 </html>

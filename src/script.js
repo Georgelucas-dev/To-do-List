@@ -118,7 +118,7 @@ function renderTasks() {
     const completeBnt = document.createElement("div");
     completeBnt.id = "complete";
     const completeImg = document.createElement("img");
-    completeImg.src = "./assets/correct.png";
+    completeImg.src = "../assets/correct.png";
     completeImg.alt = "complete";
     completeImg.id = "complete-img";
 
@@ -138,7 +138,7 @@ function renderTasks() {
     const deleteBnt = document.createElement("button");
     deleteBnt.id = "delete";
     const deleteImg = document.createElement("img");
-    deleteImg.src = "./assets/trash-can.png";
+    deleteImg.src = "../assets/trash-can.png";
     deleteImg.alt = "Delete";
     deleteImg.id = "delete-img";
     deleteBnt.appendChild(deleteImg);
@@ -166,39 +166,3 @@ function notificacao(message, color) {
   }, 3000);
 }
 
-const startTimerBtn = document.getElementById("start-pomodoro");
-const timerDisplay = document.getElementById("timer");
-const resetTimer = document.getElementById("reset-pomodoro");
-
-
-let time = 25 * 60;
-
-startTimerBtn.addEventListener("click", () => {
-  const timer = setInterval(() => {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    let updatetime = (timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`);
-
-    if (time === 0) {
-      clearInterval(timer);
-      notificacao("Game Over", "#65bd53");
-    }
-    resetTimer.addEventListener("click", () => {
-      clearInterval(timer);
-      time = 25 * 60;
-    });
-
-    time--;
-  }, 1000);
-});
-
-
-const maximise = document.getElementById('maximise');
-const pomodoro = document.getElementById('pomodoro-container');
-const todolist = document.getElementById('container');
-
-
-maximise.addEventListener('click', () => {
-  pomodoro.style.width = '100%';
-  todolist.style.display = 'none';
-})

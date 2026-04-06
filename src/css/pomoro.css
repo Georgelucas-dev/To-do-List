@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #000;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.pomodoro-container {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.pomodoro {
+  position: absolute;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pomodoro h2 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+.pomodoro h1 {
+  font-size: 8rem;
+  text-align: center;
+}
+
+.pomodoro button {
+  height: 50px;
+  width: 150px;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.maximise {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.maximise img {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.maximise img:hover {
+  transform: scale(1.1);
+}

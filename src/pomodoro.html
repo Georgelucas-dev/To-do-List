@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/pomoro.css" />
+    <title>Pomodoro</title>
+  </head>
+  <body>
+    <div id="pomodoro-container" class="pomodoro-container">
+      <div class="pomodoro">
+        <h2>Focus</h2>
+        <h1 id="timer">25:00</h1>
+        <div class="buttons">
+          <button id="start-pomodoro">Start</button>
+          <button id="reset-pomodoro" onclick="resetPomodoro()">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const startTimerBtn = document.getElementById("start-pomodoro");
+      const timerDisplay = document.getElementById("timer");
+      const resetTimer = document.getElementById("reset-pomodoro");
+
+      let time = 25 * 60;
+
+      startTimerBtn.addEventListener("click", () => {
+        const timer = setInterval(() => {
+          let minutes = Math.floor(time / 60);
+          let seconds = time % 60;
+          let updatetime =
+            (timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`);
+
+          if (time === 0) {
+            clearInterval(timer);
+            notificacao("Game Over", "#65bd53");
+          }
+          resetTimer.addEventListener("click", () => {
+            clearInterval(timer);
+            time = 25 * 60;
+          });
+
+          time--;
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
