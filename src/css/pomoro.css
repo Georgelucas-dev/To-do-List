@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -57,7 +57,13 @@ body {
   text-align: center;
 }
 
-.pomodoro button {
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pomodoro .btn {
   height: 50px;
   width: 150px;
   font-size: 1.5rem;
@@ -75,9 +81,17 @@ body {
   right: 10px;
 }
 
-.maximise img {
-  height: 30px;
-  width: 30px;
+.fullScreenBnt{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+}
+
+.fullScreen {
+  height: 45px;
+  width: 45px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -86,4 +100,24 @@ body {
 
 .maximise img:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .pomodoro-container {
+    width: 100%;
+  }
+
+  .pomodoro h2 {
+    font-size: 2rem;
+  }
+
+  .pomodoro h1 {
+    font-size: 4rem;
+  }
+
+  .pomodoro .btn {
+    height: 40px;
+    width: 120px;
+    font-size: 1.2rem;
+  }
 }

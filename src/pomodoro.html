@@ -12,8 +12,9 @@
         <h2>Focus</h2>
         <h1 id="timer">25:00</h1>
         <div class="buttons">
-          <button id="start-pomodoro">Start</button>
-          <button id="reset-pomodoro" onclick="resetPomodoro()">Reset</button>
+          <button class="btn" id="start-pomodoro">Start</button>
+          <button class="btn" id="reset-pomodoro" onclick="resetPomodoro()">Reset</button>
+          <button class="fullScreenBnt" onclick="toggleFullscreen()"><img class="fullScreen" src="../assets/scale-up.png" alt="Fullscreen"></button>
         </div>
       </div>
     </div>
@@ -44,6 +45,14 @@
           time--;
         }, 1000);
       });
+
+      function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      }
     </script>
   </body>
 </html>
