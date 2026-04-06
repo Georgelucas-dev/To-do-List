@@ -226,7 +226,7 @@ body {
   background-color: var(--background-color);
   color: var(--primary-color);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color, color 0.5s ease;
 }
@@ -241,7 +241,7 @@ body {
   height: 3rem;
   font-size: 1.1rem;
   background-color: var(--secondary-color);
-  color: var(--text-color;or);
+  color: var(--text-color);
   width: 70%;
   border: 1px solid #555;
   border-radius: 10px;
@@ -456,7 +456,6 @@ body {
     font-size: 1.5rem;
   }
 }
-
 @media (max-width: 480px) {
   .content {
     height: 500px;
@@ -478,5 +477,22 @@ body {
 
   #tasks {
     font-size: 1.2rem;
+  }
+
+  .maximise img:hover {
+    transform: none;
+  }
+
+  #set-task-name:hover {
+    transform: none;
+  }
+
+  #add-item:hover {
+    background-color: var(--background-color);
+  }
+
+  #add:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
   }
 }
