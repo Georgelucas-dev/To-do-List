@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   background: #000;
+  overflow-x: hidden;
 }
 
 .hub {
@@ -78,7 +79,6 @@
 }
 .card:hover {
   border-color: #4ade80;
-  background: #131f13;
 }
 .card.wide {
   grid-column: 1/-1;
